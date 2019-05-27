@@ -1,4 +1,4 @@
-import { Controller, ClassMiddleware, Get } from "@overnightjs/core";
+import { Controller, ClassMiddleware, Get } from '@overnightjs/core';
 import * as ExpressVue from 'express-vue';
 import * as path from 'path';
 
