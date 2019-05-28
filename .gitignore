@@ -86,3 +86,6 @@ typings/
 
 # Compiled source code
 dist/
+
+# Compiled React
+parcel/

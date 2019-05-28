@@ -1,12 +1,9 @@
 import { Controller, ClassMiddleware, Get } from '@overnightjs/core';
+import Logger from '@ayana/logger';
+import { Request, Response } from 'express';
 import * as path from 'path';
 
-import Logger from '@ayana/logger';
-
-import { Response } from 'express';
-
-
-@Controller('/')
+@Controller('') // handles /
 export class FrontendController {
     private logger: Logger;
 
@@ -14,7 +11,19 @@ export class FrontendController {
         this.logger = Logger.get(FrontendController);
     }
 
-    @Get('/')
+    @Get()
     public rootPageHandler(req: Request, res: Response) {
+        return res.redirect('/login');
+    }
+
+    @Get('login')
+    public loginHandler(req: Request, res: Response) {
+        return this.sendReactFile(res, 'login');
+    }
+
+    private sendReactFile(res: Response, page: string) {
+        return res.sendFile('./parcel/' + page + '.html', {
+           root: path.join(__dirname, '../..')
+        });
     }
 }

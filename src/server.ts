@@ -1,8 +1,10 @@
 import { Server } from '@overnightjs/core';
 import { FrontendController } from './frontend/controller';
 import Logger from '@ayana/logger';
+import Express from 'express';
 
 import * as util from 'util';
+import * as path from 'path';
 
 export class CascadeServer extends Server {
     private logger: Logger;
@@ -20,7 +22,11 @@ export class CascadeServer extends Server {
             }
         }));
 
-        this.setupControllers();
+        this.setupControllers(); // set up controllers first before static, because otherwise there may be conflicts
+
+        this.app.use(Express.static(path.join(__dirname, '../parcel'), {
+            index: false
+        })); // serve parcel files, ignore html.
     }
 
     private setupControllers() {

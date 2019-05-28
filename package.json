@@ -7,20 +7,25 @@
     "start": "node dist/index.js",
     "cascade:watch": "tsc -w",
     "cascade:build": "tsc",
-    "react:build": "",
+    "parcel": "parcel build react/*.html -d ./parcel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@ayana/logger": "^2.0.0-beta.3",
+    "@material-ui/core": "^4.0.1",
     "@overnightjs/core": "^1.5.5",
     "express": "^4.17.1",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "parcel-bundler": "^1.12.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
     "@types/node": "^12.0.2",
+    "@types/parcel-bundler": "^1.12.0",
     "typescript": "^3.4.5"
   }
 }
