@@ -1,5 +1,5 @@
 import { Server } from '@overnightjs/core';
-import { FrontendController } from './frontend/controller';
+import { FrontendController } from './controllers/frontend/controller';
 import Logger from '@ayana/logger';
 import Express from 'express';
 
