@@ -24,9 +24,7 @@ export class CascadeServer extends Server {
 
         this.setupControllers(); // set up controllers first before static, because otherwise there may be conflicts
 
-        this.app.use(Express.static(path.join(__dirname, '../parcel'), {
-            index: false
-        })); // serve parcel files, ignore html.
+        this.app.use(Express.static(path.join(__dirname, '../parcel/js'))); // serve bundled js files
     }
 
     private setupControllers() {
