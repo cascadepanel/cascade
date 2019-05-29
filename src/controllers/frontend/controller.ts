@@ -23,7 +23,7 @@ export class FrontendController {
 
     private sendReactFile(res: Response, page: string) {
         return res.sendFile('./parcel/' + page + '.html', {
-           root: path.join(__dirname, '../..')
+           root: path.join(__dirname, '../../..')
         });
     }
 }
