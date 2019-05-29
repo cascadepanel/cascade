@@ -1,0 +1,15 @@
+##################################
+#   Cascade configuration file   #
+##################################
+
+# When true, Cascade will be put into development mode. This will
+# enable verbose output.
+debug = false
+
+# The port that the Cascade server will run on.
+port = 8000
+
+# Forgot the admin password you set up? Put a new password here
+# and log in, then change your password. Afterwards, clear out
+# this config option and restart Cascade.
+admin-password-override = ""
